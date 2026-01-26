@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Hostel Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--- LOGIN PAGE --->
+<div class="login-page" id="loginBox">
+    <div class="login-card">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Hostel" class="login-img">
+        <h2>Hostel Management System</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p class="error" id="loginMsg"></p>
+        
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard hidden" id="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>HMS</h2>
+        <ul>
+            <li onclick="showSection('home')">🏠 Dashboard</li>
+            <li onclick="showSection('register')">🧑‍🎓 Register Student</li>
+            <li onclick="showSection('view')">📋 View Students</li>
+            <li onclick="logout()">🚪 Logout</li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HOME -->
+        <section id="home" class="section">
+            <h1>Welcome Admin</h1>
+            <div class="cards">
+                <div class="card">
+                    <img1 src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+                    <h3>Rooms</h3>
+                    <p>Manage hostel rooms efficiently</p>
+                </div>
+                <div class="card">
+                    <img2 src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+                    <h3>Students</h3>
+                    <p>Maintain student records</p>
+                </div>
+                <div class="card">
+                    <img3 src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+                    <h3>Facilities</h3>
+                    <p>Track hostel facilities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTER STUDENT -->
+        <section id="register" class="section hidden">
+            <h2>Student Registration</h2>
+            <div class="form-card">
+                <input type="text" id="name" placeholder="Student Name">
+                <input type="text" id="roll" placeholder="Roll Number">
+                <input type="text" id="room" placeholder="Room Number">
+                <button onclick="addStudent()">Register Student</button>
+            </div>
+        </section>
+
+        <!-- VIEW STUDENTS -->
+        <section id="view" class="section hidden">
+            <h2>Student List</h2>
+            <div class="table-card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll No</th>
+                            <th>Room No</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
